@@ -48,6 +48,6 @@ else:
     openDialogWithDefault=openDialog
     
     def saveDialog(filters,default=None):
-        from tkFileDialog import asksaveasfilename
+        from tkinter.filedialog import asksaveasfilename
         return asksaveasfilename(filetypes=_parseFilters(filters),initialdir=default)
     saveDialogWithDefault=saveDialog
