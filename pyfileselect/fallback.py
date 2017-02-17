@@ -25,12 +25,11 @@
 import sys
 import os
 
-from Tkinter import Tk
-
 def _parseFilters(filters):
     return filters
 
 if sys.version_info.major==2:
+    from Tkinter import Tk
     Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
     
     def openDialog(filters,default=None):
@@ -45,7 +44,7 @@ if sys.version_info.major==2:
 else:
     def openDialog(filters,default=None):
         from tkinter.filedialog import askopenfilename
-        filename = askopenfilename(filetypes=_parseFilters(filters),initialdir=default)
+        return askopenfilename(filetypes=_parseFilters(filters),initialdir=default)
     openDialogWithDefault=openDialog
     
     def saveDialog(filters,default=None):

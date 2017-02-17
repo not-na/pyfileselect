@@ -22,7 +22,7 @@
 #  
 #  
 
-raise ImportError("Currently buggy")
+raise ImportError("Currently buggy") # To prevent this from being used
 
 import os
 import inspect

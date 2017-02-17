@@ -34,7 +34,7 @@ except ImportError:
     from . import fallback as _nativefileselect
 
 def interpretResult(path):
-    if isinstance(path,basestring) and len(path)!=0:
+    if (isinstance(path,str) or isinstance(path,bytes)) and len(path)!=0:
         return os.path.abspath(path)
     else:
         # To Prevent weird return values from the various implementations
