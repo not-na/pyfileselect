@@ -42,6 +42,9 @@ if sys.version_info.major==2:
         return asksaveasfilename(filetypes=_parseFilters(filters),initialdir=default)
     saveDialogWithDefault=saveDialog
 else:
+    from tkinter import Tk
+    Tk().withdraw()
+    
     def openDialog(filters,default=None):
         from tkinter.filedialog import askopenfilename
         return askopenfilename(filetypes=_parseFilters(filters),initialdir=default)
